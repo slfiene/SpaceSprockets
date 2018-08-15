@@ -1,6 +1,3 @@
-// var msg = 'Hello World';
-// console.log(msg);
-
 // Initialize the client
 var client = require('smartsheet');
 var smartsheet = client.createClient({
