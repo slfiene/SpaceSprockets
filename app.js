@@ -4,7 +4,7 @@
 // Initialize the client
 var client = require('smartsheet');
 var smartsheet = client.createClient({
-    accessToken: 'll352u9jujauoqz4gstvsae05',
+    accessToken: '2buze6on2k4mwkcn4bake49m8e',
     logLevel: 'info'
 });
 
