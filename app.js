@@ -9,7 +9,7 @@ var smartsheet = client.createClient({
 });
 
 // The `smartsheet` variable now contains access to all of the APIs
-
+/*
 // Set queryParameters for `include` and pagination
 var options = {
     queryParameters: {
@@ -31,6 +31,46 @@ smartsheet.sheets.listSheets(options)
             .catch(function(error) {
                 console.log(error);
             });
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+*/
+var body = {
+    name: "Test Webhook",
+    callbackUrl: "https://www.myApp.com/webhooks",
+    scope: "sheet",
+    scopeObjectId: 7786463652800388,
+    events: ["*.*"],
+    version: 1,
+};
+
+var options = {
+    body: body,
+};
+
+
+smartsheet.webhooks.createWebhook(options)
+    .then(function(newWebhook) {
+        var updateBody = {
+            enabled: true
+        };
+        var updateOptions = {
+            webhookId: newWebhook.result.id,
+            body: updateBody
+        };
+        console.log(newWebhook);
+        console.log(newWebhook.result.enabled);
+        if (newWebhook.result.enabled == false) {
+            smartsheet.webhooks.updateWebhook(updateOptions)
+                .then(function(updateWebhook) {
+                    console.log("Updated");
+                })
+                .catch(function(error) {
+                    console.log("Update" + error);
+                });
+        }
+
     })
     .catch(function(error) {
         console.log(error);
