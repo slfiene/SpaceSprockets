@@ -9,7 +9,7 @@ var smartsheet = client.createClient({
 
 // Specify the directive
 var sheet = {
-  "name": "Snaggle Tooth Sprocket",
+  "name": `${sheetName}`,
   "fromId": 5131792685524868
 };
 
@@ -168,4 +168,4 @@ smartsheet.sheets.createSheetFromExisting(options)
     console.log(error);
   });
 
-  
+
