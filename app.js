@@ -169,12 +169,3 @@ smartsheet.sheets.createSheetFromExisting(options)
   });
 
   
-
-
-
-//Template ID 5131792685524868
-
-//Folder ID 8249446799566724
-
-
-//AccessToken oeungzfaw2ot94ebg4n94fqthh
