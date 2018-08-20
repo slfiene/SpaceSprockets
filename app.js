@@ -3,7 +3,7 @@ var client = require('smartsheet');
 var getList = require('./getListColumns');
 var getSheet = require('./getListRows');
 var smartsheet = client.createClient({
-    accessToken: 'oeungzfaw2ot94ebg4n94fqthh',
+    accessToken: `${newAccessToken}`,
     logLevel: 'info'
 });
 
